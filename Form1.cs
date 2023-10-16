@@ -72,12 +72,25 @@ namespace Calculator
                 if (results.Contains('+'))
                 {
                     expression = results.Split('+');
-                    results = (Convert.ToInt64(expression[0]) + Convert.ToInt64(expression[1])).ToString();
+                    try
+                    {
+                        results = (Convert.ToInt64(expression[0]) + Convert.ToInt64(expression[1])).ToString();
+                    } catch
+                    {
+                        return;
+                    }
                 }
                 else if (results.Contains('x'))
                 {
                     expression = results.Split('x');
-                    results = (Convert.ToInt64(expression[0]) * Convert.ToInt64(expression[1])).ToString();
+                    try
+                    {
+                        results = (Convert.ToInt64(expression[0]) * Convert.ToInt64(expression[1])).ToString();
+                    }
+                    catch
+                    {
+                        return;
+                    }          
                 }
                 else if (results.Contains('-'))
                 {
@@ -86,7 +99,14 @@ namespace Calculator
                     {
                         return;
                     }
-                    results = (-1 * (Convert.ToInt64(expression[1])) - Convert.ToInt64(expression[2])).ToString();
+                    try
+                    {
+                        results = (-1 * (Convert.ToInt64(expression[1])) - Convert.ToInt64(expression[2])).ToString();
+                    }
+                    catch
+                    {
+                        return;
+                    }
                 }
             }
             else
@@ -98,7 +118,14 @@ namespace Calculator
                     {
                         return;
                     }
-                    results = (Convert.ToInt64(expression[0]) + Convert.ToInt64(expression[1])).ToString();
+                    try
+                    {
+                        results = (Convert.ToInt64(expression[0]) + Convert.ToInt64(expression[1])).ToString();
+                    }
+                    catch
+                    {
+                        return;
+                    }
                 }
                 else if (results.Contains('x'))
                 {
@@ -107,7 +134,15 @@ namespace Calculator
                     {
                         return;
                     }
-                    results = (Convert.ToInt64(expression[0]) * Convert.ToInt64(expression[1])).ToString();
+                    try
+                    {
+                        results = (Convert.ToInt64(expression[0]) * Convert.ToInt64(expression[1])).ToString();
+                    }
+                    catch
+                    {
+                        return;
+                    }
+                    
                 }
                 else if (results.Contains('-'))
                 {
@@ -116,7 +151,15 @@ namespace Calculator
                     {
                         return;
                     }
-                    results = (Convert.ToInt64(expression[0]) - Convert.ToInt64(expression[1])).ToString();
+
+                    try
+                    {
+                        results = (Convert.ToInt64(expression[0]) - Convert.ToInt64(expression[1])).ToString();
+                    }
+                    catch
+                    {
+                        return;
+                    }
                 }
             }
 
